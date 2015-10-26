@@ -4,19 +4,25 @@ body {
     font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
 }
 
+.nextQuestion {
+  display: none;
+}
+
 #dataTable {
   text-align: center;
   margin: 0 auto;
 }
 
-.stage { display: none; };
+.stage {
+  display: none;
+};
 
 .stage {
-  -webkit-perspective: 900;
-  { display: none; };
+  -webkit-perspective: 1000;
 }
 
 .flashcard {
+  cursor: pointer;
   height: 300px;
   width: 500px;
   margin: 0 auto;

@@ -16,6 +16,7 @@
   </form>
   <br>
   <button id='startGame' type='button'>Click here to start</button>
+  <br>
     <br>
     <h3>List of your cards</h3>
     <table id='dataTable'>
@@ -29,14 +30,22 @@
       </tr>
     </table>
     <br>
-  <div class="stage">
-    <div class="flashcard">
-      <div class="front">Front</div>
-      <div class="back">Back</div>
+  <div class='stage'>
+    <div class='flashcard'>
+      <div class='front'>
+      <p id='hints'>front</p>
+      </div>
+      <div class='back'>
+      <p id='answers'>back</p>
+      </div>
     </div>
   </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="script.js"></script>
+  <br>
+  <div class='nextQuestion'>
+    <button type='button'>Next Card</button>
+  </div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<script src='script.js'></script>
 
 </body>
 </html>
