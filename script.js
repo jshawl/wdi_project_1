@@ -12,8 +12,9 @@ var cards = {
   answersObject: [],
 }
 
-// This takes the input and puts it in the cards array
-$('#submitButton').click(function(){
+// This takes the input and puts it in the cards array]
+$('#submitButton').on('click', submitCardEntry);
+function submitCardEntry(){
     var h = document.getElementById('hintTable');
     cards.hintsObject.push(document.getElementById('hint').value);
     h.innerHTML=cards.hintsObject.join('<br/>');
@@ -21,10 +22,9 @@ $('#submitButton').click(function(){
     cards.answersObject.push(document.getElementById('answer').value);
     a.innerHTML=cards.answersObject.join('<br/>');
     submitCard.reset();
-});
+};
 
 var i = 0;
-var j = 0;
 
 // This moves from one item in the array to the next or previous
 $('.nextQuestion').click(function(){
@@ -37,6 +37,17 @@ $('.prevQuestion').click(function(){
     displayCard(i);
 });
 
+// This makes the left and right key work to flip the cards
+$('body').keydown(function(e){
+  if (e.keyCode == 37) {
+      i--;
+      displayCard(i);
+    } else if (e.keyCode == 39) {
+      i++;
+      displayCard(i);
+    }
+});
+
 // This prints the text to the cards on the screen
 function displayCard(i) {
     $('#hints').empty();
@@ -44,22 +55,27 @@ function displayCard(i) {
     $('#answers').empty();
     $('#answers').append(cards.answersObject[i]);
 
-    if(i == 0)
+    if(i == 0) {
         $('.prevQuestion').hide();
-    else
+      }
+    else {
         $('.prevQuestion').show();
+      }
 
-    if(i == cards.hintsObject.length-1)
+    if(i == cards.hintsObject.length-1){
         $('.nextQuestion').hide();
-    else
+      } else {
         $('.nextQuestion').show();
+      }
 };
 
 // This swipes all the starting screen information in and out in a nifty fashion
 $('#startGame').click(function(){
+  // This randomizes the cards, but it unfortunately does not work as it does not keep the question and answer arrays connected.
   // cards.hintsObject.sort(function(a, b){
   //   return 0.5-Math.random();
   // });
+  displayCard(0);
   $('#dataTable').toggle('slow');
   $('h3').toggle('slow');
   $('#submitCard').toggle('slow');
