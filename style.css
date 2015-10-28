@@ -4,11 +4,15 @@ body {
     text-align: center;
     margin: 0 auto;
     color: white;
-    font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
+    font-family: Baskerville, Garamond, Times New Roman, serif;
 }
 
 p {
   color: black;
+}
+
+#validCSS {
+  float: right;
 }
 
 .nextQuestion, .prevQuestion {
@@ -19,6 +23,7 @@ p {
   text-align: center;
   margin: 0 auto;
 }
+
 th {
   width: 300px;
   max-width: 300px;
@@ -26,7 +31,7 @@ th {
 
 .stage {
   display: none;
-};
+}
 
 .stage {
   -webkit-perspective: 1000;
